@@ -462,7 +462,7 @@ async def test_revert_and_rapid_edits_use_debounced_persistence(
 async def test_initial_load_does_not_schedule_a_save(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    flushes: list[str | None] = []
+    flushes: list[object] = []
     original_flush = TrackScreen._flush_and_run
 
     def record_flush(screen: TrackScreen) -> None:
